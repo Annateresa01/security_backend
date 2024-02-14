@@ -2,6 +2,7 @@ const express=require("express")
 const cors=require("cors")
 const mongoose=require("mongoose")
 const adminrouter=require("./controllers/addsecrouter")
+const securouter=require("./controllers/addvisitorouter")
 
 const app=express()
 
@@ -13,6 +14,7 @@ mongoose.connect("mongodb+srv://anna07:anna@cluster0.a7na4kg.mongodb.net/blogsDb
 }
 )
 app.use("/api/admin",adminrouter)
+app.use("/api/security",securouter)
 
 
 app.listen(3001)
